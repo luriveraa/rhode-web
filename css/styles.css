@@ -11277,7 +11277,110 @@ header p {
   object-position: top !important; /* Le da prioridad a la parte superior y recorta abajo */
 }
 
-/* --- CORRECCI�N DEL RECORTE DE IMAGEN --- */
+/* --- CORRECCIN DEL RECORTE DE IMAGEN --- */
 .color-img {
-  object-position: bottom !important; /* Muestra la parte inferior de la imagen donde est�n las esp�tulas y recorta lo que sobra de arriba */
+  object-position: bottom !important; /* Muestra la parte inferior de la imagen donde estn las esptulas y recorta lo que sobra de arriba */
+}
+
+/* --- AJUSTES DE RESPONSIVIDAD (PC Y MÓVIL) --- */
+
+/* Ajuste general de la cita */
+#frase h2 {
+  white-space: normal !important; /* Permitir que el texto haga salto de línea en pantallas pequeñas */
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* Adaptación para pantallas medianas y pequeñas (Tablets y Celulares) */
+@media (max-width: 991px) {
+  /* Cabecera / Portada */
+  .masthead {
+    aspect-ratio: auto !important;
+    min-height: 600px !important;
+    display: flex;
+    align-items: center;
+    padding-top: 7rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  .masthead .mb-5.mb-lg-0 {
+    margin-top: 2rem !important;
+  }
+  
+  .masthead h1 {
+    font-size: clamp(1.8rem, 6vw, 2.2rem) !important;
+  }
+  
+  .masthead p {
+    font-size: clamp(2.2rem, 9vw, 3rem) !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  /* Galería de Productos */
+  .gallery-track {
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0 !important;
+  }
+  
+  /* Ocultamos las tarjetas laterales en móviles para enfocar la central */
+  .gallery-track > .gallery-card:not(.gallery-card-featured) {
+    display: none !important;
+  }
+  
+  /* Ajustamos el tamaño de la tarjeta central destacada */
+  .gallery-card-featured {
+    width: 290px !important;
+    height: 370px !important;
+    margin-top: 0 !important;
+  }
+  
+  .gallery-card-wrapper {
+    gap: 1rem !important;
+  }
+  
+  /* Colocamos las flechas dentro de la pantalla */
+  .gallery-arrow-left {
+    left: 0.5rem !important;
+  }
+  
+  .gallery-arrow-right {
+    right: 0.5rem !important;
+  }
+  
+  /* Última Sección (Verano 2026) */
+  .empty-feature-section {
+    min-height: auto !important;
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+  }
+  
+  .empty-rectangle {
+    width: 290px !important;
+    height: 370px !important;
+    margin-bottom: 2.5rem !important;
+  }
+}
+
+/* Adaptación específica para pantallas muy pequeñas (Celulares chicos) */
+@media (max-width: 576px) {
+  .empty-rectangle {
+    width: 100% !important;
+    max-width: 290px !important;
+    height: auto !important;
+    aspect-ratio: 4 / 5 !important;
+  }
+  
+  .gallery-card-featured {
+    width: 260px !important;
+    height: 330px !important;
+  }
+  
+  .gallery-arrow-left {
+    left: 0.2rem !important;
+  }
+  
+  .gallery-arrow-right {
+    right: 0.2rem !important;
+  }
 }
